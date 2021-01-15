@@ -1,6 +1,5 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
-// import { AboutContext } from './about'
 import { createAction1 } from '../store/actions/action'
 
 interface Props1 {
@@ -13,7 +12,7 @@ class A1 extends Component<Props1> {
   //   super(props)
   // }
 
-  // static contextType = AboutContext
+  // static contextType = UserContext
 
   state = {
     a: 1

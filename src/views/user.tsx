@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom'
 import { Button } from 'antd'
 import A from './a1'
 
-export const AboutContext: any = React.createContext(null)
+export const UserContext: any = React.createContext(null)
 
 interface stateConstructor {
   list: number[],
@@ -11,7 +11,7 @@ interface stateConstructor {
   stateB: Function
 }
 
-export default class About extends Component<{}, stateConstructor> {
+export default class User extends Component<{}, stateConstructor> {
   constructor (props: any) {
     super(props)
     this.state = { 
@@ -43,12 +43,12 @@ export default class About extends Component<{}, stateConstructor> {
     })
     return (
       
-        <AboutContext.Provider value={this.state}>
+        <UserContext.Provider value={this.state}>
           <div>
             v1
             <Button onClick={this.doClick} type='primary'>哈哈哈</Button>
             { List }
-            <Route path='/about/hahaha'>
+            <Route path='/user/hahaha'>
               哈哈哈
             </Route>
             <A 
@@ -58,7 +58,7 @@ export default class About extends Component<{}, stateConstructor> {
               onEvent1={this.event1} >
             </A>
           </div>
-        </AboutContext.Provider>
+        </UserContext.Provider>
     )
   }
   

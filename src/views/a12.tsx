@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react'
-import { AboutContext } from './about'
+import { UserContext } from './user'
 
 // interface Props1 {
 // }
@@ -7,7 +7,7 @@ import { AboutContext } from './about'
 export default function A12 (props: any) {
   const [state1, setState1] = useState(0)
   const [state2, setState2] = useState(1)
-  const context = useContext(AboutContext)
+  const context = useContext(UserContext)
 
   useEffect(()=> {
     console.log('mounted')

@@ -1,10 +1,18 @@
 // import { Router } from 'react-router'
-import About from '../views/about'
-import View2 from '../views/view2'
+import User from '../views/user'
+import Home from '../views/home/home'
 import View3 from '../views/view3'
-const routes = [
-  { path: '/', component: About },
-  { path: '/about', component: View2 },
+
+interface SingleRoute {
+  path: string,
+  component: any,
+  children?: SingleRoute[]
+}
+export type RouteConfigType = SingleRoute[]
+
+const routes: RouteConfigType = [
+  { path: '/', component: Home, children: [] },
+  { path: '/user', component: User },
   { path: '/other', component: View3 }
 ]
 export default routes
