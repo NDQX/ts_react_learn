@@ -1,5 +1,5 @@
 // import { Router } from 'react-router'
-import User from '../views/user'
+import User from '../views/user/user'
 import Home from '../views/home/home'
 import View3 from '../views/view3'
 

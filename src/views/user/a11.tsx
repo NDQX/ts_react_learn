@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
-import { createAction1 } from '../store/actions/action'
+import { createAction1 } from '../../store/actions/action'
 
 interface Props1 {
   param1: any,
