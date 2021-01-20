@@ -1,10 +1,10 @@
 import { useState, useEffect, useContext } from 'react'
-import { UserContext } from './user'
+import { UserContext } from './communication'
 
 // interface Props1 {
 // }
 
-export default function A12 (props: any) {
+export default function PartB (props: any) {
   const [state1, setState1] = useState(0)
   const [state2, setState2] = useState(1)
   const context = useContext(UserContext)
@@ -31,11 +31,11 @@ export default function A12 (props: any) {
 
 
   return (
-    <div>
-      <br></br>
-      A12
+    <div className='partB'>
+      <h5>PartB</h5>
+      
       <p>{state1}</p>
-      <button onClick={() => setState1(state1 + 1)}>b+1</button>
+      <button onClick={() => setState1(state1 + 1)}>孙按钮2</button>
       <button onClick={() => setState2(state2 + 1)}>c+1</button>
       { props.children }
     </div>

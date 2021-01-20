@@ -1,5 +1,5 @@
 // import { Router } from 'react-router'
-import User from '../views/user/user'
+import User from '../views/communication/communication'
 import Home from '../views/home/home'
 import View3 from '../views/view3'
 
@@ -11,7 +11,7 @@ interface SingleRoute {
 export type RouteConfigType = SingleRoute[]
 
 const routes: RouteConfigType = [
-  { path: '/', component: Home, children: [] },
+  { path: '/home', component: Home, children: [] },
   { path: '/user', component: User },
   { path: '/other', component: View3 }
 ]

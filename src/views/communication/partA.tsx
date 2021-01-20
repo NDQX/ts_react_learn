@@ -7,7 +7,7 @@ interface Props1 {
   createAction1: Function
 }
 
-class A1 extends Component<Props1> {
+class PartA extends Component<Props1> {
   // constructor (props: Props1) {
   //   super(props)
   // }
@@ -27,9 +27,9 @@ class A1 extends Component<Props1> {
 
   render () {
     return (
-      <div style={{width: '100px', height: '100px', border: '1px solid red' }}>
-        A11-----{ this.props.param1 }
-        <button onClick={this.btnClick}>a11btn</button>
+      <div className='partA'>
+        <h5>PartA--使用react-reduct--{ this.props.param1 }</h5>
+        <button onClick={this.btnClick}>孙按钮1</button>
       </div>
     )
   }
@@ -47,5 +47,5 @@ function mapState (state: any) {
 //   }
 // }
 // const A2: any = connect(mapState, mapDispatch)(A1)
-const A2: any = connect(mapState, { createAction1 })(A1)
-export default A2
+// const A2: any = connect(mapState, { createAction1 })(PartA)
+export default connect(mapState, { createAction1 })(PartA)
