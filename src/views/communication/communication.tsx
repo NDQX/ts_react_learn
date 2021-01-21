@@ -2,16 +2,20 @@ import React, { Component } from 'react'
 import { Button, message } from 'antd'
 import './user.scss'
 import Left from './left'
-
-export const UserContext: any = React.createContext(null)
-
-interface stateConstructor {
+import { UserContext } from '../../utils/context'
+import { connect } from 'react-redux'
+interface stateType {
   list: number[],
   leftTitle: String | Number,
   stateCb: Function
 }
 
-export default class communication extends Component<{}, stateConstructor> {
+function mapStateToProps1 (state: any) {
+  console.log(state, 'state')
+  return { param1: state.reducer1.param1 }
+}
+@(connect(mapStateToProps1) as any)
+export default class Communication extends Component<any, stateType> {
   constructor (props: any) {
     super(props)
     this.state = { 
@@ -31,6 +35,12 @@ export default class communication extends Component<{}, stateConstructor> {
     this.LeftRef.current.aCb()
   }
 
+  doClick2 = () => {
+    this.setState({
+      leftTitle: this.state.leftTitle + 'h'
+    })
+  }
+
   event1 (val:any) {
     alert(val)
   }
@@ -40,8 +50,11 @@ export default class communication extends Component<{}, stateConstructor> {
         <UserContext.Provider value={this.state}>
           <div className='user' >
             <div className="title">组件通信</div>
+            <div>爷状态： { JSON.stringify(this.state) }</div>
+            <div>爷recucx: param1: --{ this.props.param1 }</div>
             <div>
               <Button onClick={this.doClick} type='primary'>爷-调用子</Button>
+              <Button onClick={this.doClick2}>改state</Button>
             </div>
             <Left 
               ref={this.LeftRef}

@@ -2,6 +2,7 @@ import { Component } from 'react'
 import { message } from 'antd'
 import PartA from './partA'
 import PartB from './partB'
+import PartC from './partC'
 
 interface Props {
   title?: String | Number,
@@ -48,6 +49,7 @@ export default class Left extends Component<Props> {
         <PartB>
           <span>PartB 插槽</span>
         </PartB>
+        <PartC></PartC>
       </div>
     )
   }

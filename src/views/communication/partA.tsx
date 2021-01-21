@@ -1,25 +1,18 @@
+
 import { Component } from 'react'
-import { connect } from 'react-redux'
-import { createAction1 } from '../../store/actions/action'
+import { UserContext } from '../../utils/context'
+import { message } from 'antd'
 
-interface Props1 {
-  param1: any,
-  createAction1: Function
-}
+// interface Props1 {
+// }
 
-class PartA extends Component<Props1> {
-  // constructor (props: Props1) {
-  //   super(props)
-  // }
+export default class PartA extends Component {
 
-  // static contextType = UserContext
+  static contextType = UserContext
 
-  state = {
-    a: 1
-  }
-
-  btnClick = () => {
-    this.props.createAction1(2)
+  btnClick =  () => {
+    message.success('调用爷组件方法')
+    this.context.stateCb()
   }
 
   componentDidMount () {
@@ -28,24 +21,20 @@ class PartA extends Component<Props1> {
   render () {
     return (
       <div className='partA'>
-        <h5>PartA--使用react-reduct--{ this.props.param1 }</h5>
-        <button onClick={this.btnClick}>孙按钮1</button>
+        <h5>PartA---class-Context传值</h5>
+        <button onClick={ this.btnClick }>孙按钮1</button>
+        <div>
+          constext: { JSON.stringify(this.context) }
+        </div>
+        <div>
+          context.consumer----
+            <UserContext.Consumer>
+              { (value => {
+                return JSON.stringify(value)
+              })}
+          </UserContext.Consumer>
+        </div>
       </div>
     )
   }
 }
-
-function mapState (state: any) {
-  return {
-    param1: state.reducer1.param1
-  }
-}
-
-// function mapDispatch (dispatch: Function) {
-//   return {
-//     createAction1: (a: any) => dispatch(createAction1(a))
-//   }
-// }
-// const A2: any = connect(mapState, mapDispatch)(A1)
-// const A2: any = connect(mapState, { createAction1 })(PartA)
-export default connect(mapState, { createAction1 })(PartA)

@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react'
-import { UserContext } from './communication'
+import { UserContext } from '../../utils/context'
 
 // interface Props1 {
 // }
@@ -18,7 +18,6 @@ export default function PartB (props: any) {
 
   useEffect(() => {
     console.log('update')
-    console.log(context, 'context')
   })
 
   useEffect(() => {
@@ -32,11 +31,14 @@ export default function PartB (props: any) {
 
   return (
     <div className='partB'>
-      <h5>PartB</h5>
+      <h5>PartB--- hooks使用useContext</h5>
       
       <p>{state1}</p>
       <button onClick={() => setState1(state1 + 1)}>孙按钮2</button>
       <button onClick={() => setState2(state2 + 1)}>c+1</button>
+      <div>
+        context-- { JSON.stringify(context) }
+      </div>
       { props.children }
     </div>
   )
