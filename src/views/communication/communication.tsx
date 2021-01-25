@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Button, message } from 'antd'
-import './user.scss'
+import './communication.scss'
 import Left from './left'
-import { UserContext } from '../../utils/context'
+import { CommunicationContext } from '../../utils/context'
 import { connect } from 'react-redux'
 interface stateType {
   list: number[],
@@ -47,8 +47,8 @@ export default class Communication extends Component<any, stateType> {
 
   render () {
     return (
-        <UserContext.Provider value={this.state}>
-          <div className='user' >
+      <CommunicationContext.Provider value={this.state}>
+        <div className='communication' >
             <div className="title">组件通信</div>
             <div>爷状态： { JSON.stringify(this.state) }</div>
             <div>爷recucx: param1: --{ this.props.param1 }</div>
@@ -63,7 +63,7 @@ export default class Communication extends Component<any, stateType> {
               onEvent1={this.event1} >
             </Left>
           </div>
-        </UserContext.Provider>
+      </CommunicationContext.Provider>
     )
   }
   

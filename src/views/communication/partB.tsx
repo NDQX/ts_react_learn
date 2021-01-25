@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react'
-import { UserContext } from '../../utils/context'
+import { CommunicationContext } from '../../utils/context'
 
 // interface Props1 {
 // }
@@ -7,7 +7,7 @@ import { UserContext } from '../../utils/context'
 export default function PartB (props: any) {
   const [state1, setState1] = useState(0)
   const [state2, setState2] = useState(1)
-  const context = useContext(UserContext)
+  const context = useContext(CommunicationContext)
 
   useEffect(()=> {
     console.log('mounted')

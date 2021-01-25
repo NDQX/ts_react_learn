@@ -1,0 +1,19 @@
+.layout {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.sideMenu {
+  width: 260px;
+  height: 100%;
+
+  ul {
+    height: 100%;
+  }
+}
+
+.main {
+  flex: 1;
+  height: 100%;
+}

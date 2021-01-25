@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-// import { RouteConfigType } from './route'
+import Layout from '../views/layout/layout'
 import routes from './route'
 
 // const DeepRoute = (props: any) => {
@@ -16,14 +16,27 @@ import routes from './route'
 //   )
 // }
 
+const LayoutInnerRoutes = routes.filter(a => !a.isOutLayout)
+const LayoutOuterRoutes = routes.filter(a => a.isOutLayout)
 
 export default function GlobalRoute () {
   return (
     <Router>
       <Switch>
-        {routes.map((item) => {
-          return <Route path={item.path} key={item.path} component={item.component} />
-        })}
+        {
+          LayoutOuterRoutes.map((item) => {
+            return <Route path={item.path} key={item.path} component={item.component} />
+          })
+        }
+        <Layout>
+          <Switch>
+          {
+            LayoutInnerRoutes.map((item) => {
+              return <Route path={item.path} key={item.path} component={item.component} />
+            })
+          }
+          </Switch>
+        </Layout>
       </Switch>
     </Router>
   )

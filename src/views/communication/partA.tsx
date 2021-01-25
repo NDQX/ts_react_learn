@@ -1,6 +1,6 @@
 
 import { Component } from 'react'
-import { UserContext } from '../../utils/context'
+import { CommunicationContext } from '../../utils/context'
 import { message } from 'antd'
 
 // interface Props1 {
@@ -8,7 +8,7 @@ import { message } from 'antd'
 
 export default class PartA extends Component {
 
-  static contextType = UserContext
+  static contextType = CommunicationContext
 
   btnClick =  () => {
     message.success('调用爷组件方法')
@@ -28,11 +28,11 @@ export default class PartA extends Component {
         </div>
         <div>
           context.consumer----
-            <UserContext.Consumer>
+            <CommunicationContext.Consumer>
               { (value => {
                 return JSON.stringify(value)
               })}
-          </UserContext.Consumer>
+          </CommunicationContext.Consumer>
         </div>
       </div>
     )

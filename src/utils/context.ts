@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const UserContext = React.createContext({})
+export const CommunicationContext = React.createContext({})
 
 export const GoodsContext = React.createContext({value: '', dispatch: () => {}})
 
