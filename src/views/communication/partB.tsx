@@ -1,10 +1,11 @@
 import { useState, useEffect, useContext } from 'react'
 import { CommunicationContext } from '../../utils/context'
 
-// interface Props1 {
-// }
+interface Props1 {
+  children?: React.ReactNode
+}
 
-export default function PartB (props: any) {
+export default function PartB (props: Props1) {
   const [state1, setState1] = useState(0)
   const [state2, setState2] = useState(1)
   const context = useContext(CommunicationContext)

@@ -7,7 +7,7 @@ export default function PartB () {
   const inputRef = useRef<HTMLInputElement>(null)
   const btnClick = () => {
     console.log(inputRef, 'inputRef')
-    console.log(inputRef.current && inputRef.current.value )
+    console.log(inputRef.current?.value )
   }
 
   return (

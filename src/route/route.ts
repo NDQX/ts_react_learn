@@ -9,7 +9,11 @@ interface SingleRoute {
   component: any,
   children?: SingleRoute[],
   isOutLayout?: boolean | undefined,
-  menuName?: string
+  menuName?: string,
+  meta?: {
+    name?: string,
+    showNav?: boolean
+  }
 }
 export type RouteConfigType = SingleRoute[]
 

@@ -1,6 +1,7 @@
 import React, { Component, createRef, forwardRef } from "react"
 import PartA from './partA'
 import PartB from './partB'
+import PartC from './partC'
 import { message } from 'antd'
 
 interface stateType {
@@ -69,6 +70,7 @@ export default class RefUse extends Component<any, stateType> {
           ref={ this.part1Ref }
         ></PartA>
         <PartB></PartB>
+        <PartC></PartC>
       </div>
     )
   }
