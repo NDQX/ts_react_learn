@@ -51,7 +51,7 @@ export default class Communication extends Component<any, stateType> {
         <div className='communication' >
             <div className="title">组件通信</div>
             <div>爷状态： { JSON.stringify(this.state) }</div>
-            <div>爷recucx: param1: --{ this.props.param1 }</div>
+            <div>爷redux: param1: --{ this.props.param1 }</div>
             <div>
               <Button onClick={this.doClick} type='primary'>爷-调用子</Button>
               <Button onClick={this.doClick2}>改state</Button>

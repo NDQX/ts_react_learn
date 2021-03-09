@@ -32,7 +32,7 @@ export default function PartB (props: Props1) {
 
   return (
     <div className='partB'>
-      <h5>PartB--- hooks使用useContext</h5>
+      <h5>PartB--- <strong style={{'fontSize': '20px'}}>hooks使用useContext</strong></h5>
       
       <p>{state1}</p>
       <button onClick={() => setState1(state1 + 1)}>孙按钮2</button>

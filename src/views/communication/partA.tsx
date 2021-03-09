@@ -11,7 +11,7 @@ export default class PartA extends Component {
   static contextType = CommunicationContext
 
   btnClick =  () => {
-    message.success('调用爷组件方法')
+    message.success('context调用爷组件方法')
     this.context.stateCb()
   }
 
@@ -21,7 +21,7 @@ export default class PartA extends Component {
   render () {
     return (
       <div className='partA'>
-        <h5>PartA---class-Context传值</h5>
+        <h5>PartA---<strong style={{fontSize: '20px'}}>class-Context传值</strong> </h5>
         <button onClick={ this.btnClick }>孙按钮1</button>
         <div>
           constext: { JSON.stringify(this.context) }

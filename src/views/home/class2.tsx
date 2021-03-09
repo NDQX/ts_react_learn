@@ -22,7 +22,7 @@ export default class Class2 extends Component {
     console.log('Class2组件__render')
     return (
       <div>
-        home2
+        使用shouldComponentUpdate 优化class组件render ----- home2
       </div>
     )
   }

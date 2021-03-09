@@ -10,7 +10,7 @@ function Fn (props: FnProps) {
   console.log('Fn')
   return (
     <div>
-      { props.name }
+      使用react.memo优化函数组件render------{ props.name }
     </div>
   )
 }

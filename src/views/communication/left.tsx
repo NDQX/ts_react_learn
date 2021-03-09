@@ -41,7 +41,7 @@ export default class Left extends Component<Props> {
   render () {
     return (
       <div className='left'>
-        <h2>{this.props.title}</h2>
+        <h2>{this.props.title} <strong style={{fontSize: '20px'}}>props传值</strong></h2>
         <div>
           <button onClick={this.btnClick}>子调父</button>
         </div>

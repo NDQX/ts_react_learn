@@ -62,7 +62,7 @@ export default class RefUse extends Component<any, stateType> {
             return <button ref={this.getRef} key={index} onClick={ () => this.singleBtnClick(index) }>{ item }</button>
           }) }
         </div>
-        <div>
+        <div style={{ border: '2px solid red'}}>
           <h4>forwards--ref -- 传递ref</h4>
           <BtnCon ref={ this.forwardBtnRef } onClick={this.forwardBtnClick} >forwardBtn</BtnCon>
         </div>

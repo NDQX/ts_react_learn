@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
 import { createAction1 } from '../../store/actions/action'
+import { message } from 'antd'
 
 interface Props1 {
   param1: any,
@@ -14,6 +15,7 @@ class PartC extends Component<Props1> {
   }
 
   btnClick = () => {
+    message.success('触发action')
     this.props.createAction1(2)
   }
 
@@ -23,7 +25,9 @@ class PartC extends Component<Props1> {
   render () {
     return (
       <div className='partC'>
-        <h5>PartC--使用react-reduct--{ this.props.param1 }</h5>
+        <h5>PartC--<strong style={{fontSize: '20px'}}>使用react-reduct</strong></h5>
+        <p>connext 连接</p>
+        <p>--redux: { this.props.param1 }</p>
         <button onClick={this.btnClick}>孙按钮3</button>
       </div>
     )
