@@ -6,6 +6,7 @@ import Ref from '../views/refUse/refUse'
 import Context from '../views/context/index'
 import Hoc from '../views/hoc/index'
 import Form from '../views/form/index'
+import ReduxPage from '../views/redux/index'
 
 interface SingleRoute {
   path: string,
@@ -27,6 +28,7 @@ const routes: RouteConfigType = [
   { path: '/ref', component: Ref, menuName: 'ref' },
   { path: '/context', component: Context, menuName: 'context' },
   { path: '/hoc', component: Hoc, menuName: 'hoc' },
-  { path: '/form', component: Form, menuName: 'form' }
+  { path: '/form', component: Form, menuName: 'form' },
+  { path: '/redux', component: ReduxPage, menuName: 'redux' }
 ]
 export default routes
