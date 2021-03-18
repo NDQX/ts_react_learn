@@ -5,6 +5,11 @@ export function createAction1 (a: any): any {
   }
 }
 
+export function createActionCountAdd () {
+  return {
+    type: 'COUNTADD'
+  }
+}
 
 // interface Person {
 //   name: string,

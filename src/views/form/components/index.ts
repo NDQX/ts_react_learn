@@ -1,4 +1,4 @@
-import _Form, { FcPropType } from './rc-form'
+import _Form from './rc-form'
 import Field from './rc-field'
 import useForm from './useForm'
 
