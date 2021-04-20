@@ -1,6 +1,6 @@
 
 interface actionType {
-  type: string,
+  type: string | symbol,
   [key: string]: any
 }
 
@@ -11,10 +11,11 @@ export interface reducerType {
 class S_redux {
   constructor (reducer: reducerType) {
     this.reducer = reducer
+    this.dispatch({type: Symbol()}) // 获取case default 的state 
   }
 
-  reducer = undefined // 可能多个 []
-  state = undefined // 可能多个 {}
+  reducer = undefined // 
+  state: any = {} // 
   subscribers = []
 
   getState = () => {
@@ -26,14 +27,20 @@ class S_redux {
   }
 
   dispatch = (action: actionType) => {
+    console.log('dispatch', this.state)
     this.state = this.reducer(this.state, action)
     this.subscribers.forEach(cb => cb())
   }
 }
 
-const createStore = (reducer: reducerType) => {
+const createStore = (reducer: reducerType, middleFn?) => {
   
-  return new S_redux(reducer) 
+  if (middleFn) {
+    const store = new S_redux(reducer)
+    return middleFn(store)
+  }
+  const store = new S_redux(reducer)
+  return store
 }
 
 export {createStore}

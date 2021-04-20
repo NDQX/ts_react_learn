@@ -70,7 +70,7 @@ class ReduxPage extends Component {
         <p>5. subscribe 变更订阅 </p>
 
         <h4>自实现 简版redux</h4>
-        {s_store.getState()}
+        {JSON.stringify(s_store.getState())}
         <p><button onClick={this.add2}>add2</button></p>
       </div>
       

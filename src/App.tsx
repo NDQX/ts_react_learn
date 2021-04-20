@@ -1,9 +1,19 @@
 import GlobalRouteView from './route/globalRoute'
 import './App.css'
+// import { ThemeProvider } from 'react-jss' // JssProvider
+// import themeStore from './views/jss/theme'
+// import { observer } from 'mobx-react'
 
-function App() {
+// const generateId = (rule, sheet) => 'some-id'
+
+const App = () => {
+
   return (
-    <GlobalRouteView></GlobalRouteView>
+    // <JssProvider generateId={generateId}>
+      // <ThemeProvider theme={themeStore.theme}>
+        <GlobalRouteView></GlobalRouteView>
+      // </ThemeProvider>
+    // </JssProvider>
   )
 }
 

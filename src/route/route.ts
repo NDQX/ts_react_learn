@@ -9,6 +9,8 @@ import Form from '../views/form/index'
 import ReduxPage from '../views/redux/index'
 import ReactReduxPage from '../views/react-redux/index'
 import ReactRouterPage from '../views/react-router/index'
+import MobxPage from '../views/mobx'
+import JssPage from '../views/jss'
 
 interface SingleRoute {
   path: string,
@@ -33,6 +35,8 @@ const routes: RouteConfigType = [
   { path: '/form', component: Form, menuName: 'form' },
   { path: '/redux', component: ReduxPage, menuName: 'redux' },
   { path: '/reduxRedux', component: ReactReduxPage, menuName: 'react-redux' },
-  { path: '/reactRouter', component: ReactRouterPage, menuName: 'react-router' }
+  { path: '/reactRouter', component: ReactRouterPage, menuName: 'react-router' },
+  { path: '/mobx', component: MobxPage, menuName: 'mobx' },
+  { path: '/jss', component: JssPage, menuName: 'jss' }
 ]
 export default routes
